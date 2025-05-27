@@ -90,6 +90,11 @@ def chat():
         response = "Désolé, je n’ai pas compris votre question."
     return jsonify({"response": response})
 
+@app.route('/', methods=['GET'])
+def home():
+    return "✅ Chatbot FAQ is running. Use POST /chat with a JSON body {\"question\": \"...\"}"
+
+
 # 🔁 Démarrage avec port dynamique pour Render
 if __name__ == '__main__':
     import os
