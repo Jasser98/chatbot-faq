@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # ➕ ajouter ça
 import difflib
 import unicodedata
 
 app = Flask(__name__)
+CORS(app)  # ➕ autorise toutes les origines (ou configure si besoin)
 
 # 🔧 Nettoyage du texte
 def nettoyer(text):
