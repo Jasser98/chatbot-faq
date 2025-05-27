@@ -1,12 +1,11 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # ➕ ajouter ça
+from flask_cors import CORS
 import difflib
 import unicodedata
 
 app = Flask(__name__)
-CORS(app)  # ➕ autorise toutes les origines (ou configure si besoin)
+CORS(app)
 
-# 🔧 Nettoyage du texte
 def nettoyer(text):
     text = text.lower().strip()
     text = ''.join(
@@ -520,7 +519,6 @@ faq_data = [
 
 ]
 
-# 🔍 Recherche exacte
 def find_answer_exact(user_question):
     cleaned_user = nettoyer(user_question)
     for item in faq_data:
@@ -528,19 +526,19 @@ def find_answer_exact(user_question):
             return item["output"]
     return None
 
-# 🔍 Recherche floue avec difflib
 def find_answer_fuzzy(user_question):
     cleaned_question = nettoyer(user_question)
     questions = [item["instruction"] for item in faq_data]
     cleaned_questions = [nettoyer(q) for q in questions]
 
-    closest_match = difflib.get_close_matches(cleaned_question, cleaned_questions, n=1, cutoff=0.3)
+    closest_match = difflib.get_close_matches(cleaned_question, cleaned_questions, n=1, cutoff=0.6)
     if closest_match:
-        index = cleaned_questions.index(closest_match[0])
-        return faq_data[index]["output"]
+        score = difflib.SequenceMatcher(None, cleaned_question, closest_match[0]).ratio()
+        if score >= 0.6:
+            index = cleaned_questions.index(closest_match[0])
+            return faq_data[index]["output"]
     return None
 
-# 🌐 Endpoint API
 @app.route('/chat', methods=['POST'])
 def chat():
     user_input = request.json.get("question", "")
@@ -553,11 +551,16 @@ def chat():
 
 @app.route('/', methods=['GET'])
 def home():
-    return "✅ Chatbot FAQ is running. Use POST /chat with a JSON body {\"question\": \"...\"}"
+    return "✅ Chatbot FAQ is running. Use POST /chat with a JSON body {\\\"question\\\": \\\"...\\\"}"
 
-
-# 🔁 Démarrage avec port dynamique pour Render
 if __name__ == '__main__':
     import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
+
+# Écriture dans un fichier .py
+output_path = "/mnt/data/chatbot_faq_corrected.py"
+with open(output_path, "w", encoding="utf-8") as f:
+    f.write(chatbot_code)
+
+output_path
