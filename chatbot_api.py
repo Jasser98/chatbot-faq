@@ -17,548 +17,807 @@ def nettoyer(text):
 
 # ✅ Données FAQ
 faq_data = [
-    {"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Mes documents doivent-ils être au format PDF ?", "output": "Oui, les fichiers PDF ou JPEG sont acceptés."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Mes documents doivent-ils être au format PDF ?", "output": "Oui, les fichiers PDF ou JPEG sont acceptés."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Quels documents dois-je fournir pour une demande de crédit ?", "output": "Carte d’identité, fiche de paie des 3 derniers mois, relevé bancaire, justificatif de résidence."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Faut-il un revenu minimum pour demander un crédit ?", "output": "Oui, un revenu net mensuel supérieur à 1200 TND est requis."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Mes documents doivent-ils être au format PDF ?", "output": "Oui, les fichiers PDF ou JPEG sont acceptés."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Faut-il un revenu minimum pour demander un crédit ?", "output": "Oui, un revenu net mensuel supérieur à 1200 TND est requis."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Faut-il un revenu minimum pour demander un crédit ?", "output": "Oui, un revenu net mensuel supérieur à 1200 TND est requis."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Quels documents dois-je fournir pour une demande de crédit ?", "output": "Carte d’identité, fiche de paie des 3 derniers mois, relevé bancaire, justificatif de résidence."},
-{"instruction": "Faut-il un revenu minimum pour demander un crédit ?", "output": "Oui, un revenu net mensuel supérieur à 1200 TND est requis."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Mes documents doivent-ils être au format PDF ?", "output": "Oui, les fichiers PDF ou JPEG sont acceptés."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Mes documents doivent-ils être au format PDF ?", "output": "Oui, les fichiers PDF ou JPEG sont acceptés."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Faut-il un revenu minimum pour demander un crédit ?", "output": "Oui, un revenu net mensuel supérieur à 1200 TND est requis."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Mes documents doivent-ils être au format PDF ?", "output": "Oui, les fichiers PDF ou JPEG sont acceptés."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Faut-il un revenu minimum pour demander un crédit ?", "output": "Oui, un revenu net mensuel supérieur à 1200 TND est requis."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Faut-il un revenu minimum pour demander un crédit ?", "output": "Oui, un revenu net mensuel supérieur à 1200 TND est requis."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Mes documents doivent-ils être au format PDF ?", "output": "Oui, les fichiers PDF ou JPEG sont acceptés."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Quels documents dois-je fournir pour une demande de crédit ?", "output": "Carte d’identité, fiche de paie des 3 derniers mois, relevé bancaire, justificatif de résidence."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Mes documents doivent-ils être au format PDF ?", "output": "Oui, les fichiers PDF ou JPEG sont acceptés."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Faut-il un revenu minimum pour demander un crédit ?", "output": "Oui, un revenu net mensuel supérieur à 1200 TND est requis."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Mes documents doivent-ils être au format PDF ?", "output": "Oui, les fichiers PDF ou JPEG sont acceptés."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Faut-il un revenu minimum pour demander un crédit ?", "output": "Oui, un revenu net mensuel supérieur à 1200 TND est requis."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Mes documents doivent-ils être au format PDF ?", "output": "Oui, les fichiers PDF ou JPEG sont acceptés."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Faut-il un revenu minimum pour demander un crédit ?", "output": "Oui, un revenu net mensuel supérieur à 1200 TND est requis."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Quels documents dois-je fournir pour une demande de crédit ?", "output": "Carte d’identité, fiche de paie des 3 derniers mois, relevé bancaire, justificatif de résidence."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Mes documents doivent-ils être au format PDF ?", "output": "Oui, les fichiers PDF ou JPEG sont acceptés."},
-{"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Puis-je modifier le montant après la demande ?", "output": "Oui, avant la validation finale."},
-{"instruction": "Faut-il un revenu minimum pour demander un crédit ?", "output": "Oui, un revenu net mensuel supérieur à 1200 TND est requis."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Faut-il un revenu minimum pour demander un crédit ?", "output": "Oui, un revenu net mensuel supérieur à 1200 TND est requis."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Quels documents dois-je fournir pour une demande de crédit ?", "output": "Carte d’identité, fiche de paie des 3 derniers mois, relevé bancaire, justificatif de résidence."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Y a-t-il une ancienneté minimale requise ?", "output": "Oui, une ancienneté de 6 mois est recommandée."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Comment téléverser mes documents ?", "output": "Connectez-vous à l’espace client, allez dans ‘Mes crédits’ et cliquez sur ‘Téléverser mes documents’."},
-{"instruction": "Puis-je refuser le devis proposé ?", "output": "Oui, vous pouvez le refuser ou demander une nouvelle simulation."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Qui peut bénéficier d’un crédit chez Talan ?", "output": "Les salariés en contrat actif ayant terminé leur période d’essai."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Faut-il un revenu minimum pour demander un crédit ?", "output": "Oui, un revenu net mensuel supérieur à 1200 TND est requis."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Quels documents dois-je fournir pour une demande de crédit ?", "output": "Carte d’identité, fiche de paie des 3 derniers mois, relevé bancaire, justificatif de résidence."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Comment se passe la négociation ?", "output": "Un conseiller vous contactera par téléphone ou via la plateforme."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Que faire si la durée demandée est trop longue ?", "output": "Le gestionnaire vous proposera des alternatives ajustées à votre profil."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Que se passe-t-il après la signature du contrat ?", "output": "Le montant est débloqué et transféré dans un délai de 48 heures."},
-{"instruction": "Puis-je annuler un contrat signé ?", "output": "Non, une fois signé, le contrat engage les deux parties."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Puis-je envoyer mes documents par email ?", "output": "Non, seuls les documents téléversés via la plateforme sont pris en compte."},
-{"instruction": "Faut-il un revenu minimum pour demander un crédit ?", "output": "Oui, un revenu net mensuel supérieur à 1200 TND est requis."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Comment suivre ma demande de crédit ?", "output": "Dans l’espace client, rubrique ‘Suivi des crédits’."},
-{"instruction": "Comment signer le contrat de crédit ?", "output": "Une fois le devis accepté, le contrat est signé électroniquement sur la plateforme."},
-{"instruction": "Que faire si un document est refusé ?", "output": "Vous recevrez une notification pour téléverser un document conforme."},
-{"instruction": "Quand recevrai-je le devis ?", "output": "Une fois la demande validée et la négociation terminée."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Puis-je demander plusieurs crédits à la fois ?", "output": "Non, une seule demande active est autorisée."},
-{"instruction": "Mes documents doivent-ils être au format PDF ?", "output": "Oui, les fichiers PDF ou JPEG sont acceptés."},
-{"instruction": "Que faire si je change de compte bancaire ?", "output": "Mettez à jour vos coordonnées dans votre espace personnel."},
-{"instruction": "Qu’est-ce qu’un devis de crédit ?", "output": "C’est une estimation détaillée du crédit proposé, incluant le montant, la durée et les mensualités."},
-{"instruction": "Quels documents dois-je fournir pour une demande de crédit ?", "output": "Carte d’identité, fiche de paie des 3 derniers mois, relevé bancaire, justificatif de résidence."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Qui analyse les documents envoyés ?", "output": "Notre équipe spécialisée en crédit examine chaque dossier manuellement."},
-{"instruction": "Comment recevoir les notifications importantes ?", "output": "Activez les alertes dans vos paramètres de profil."},
-{"instruction": "Puis-je négocier le montant du crédit ?", "output": "Oui, une négociation est possible si le montant dépasse le plafond autorisé."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."},
-{"instruction": "Puis-je demander un crédit si je suis stagiaire ?", "output": "Non, seuls les salariés sous contrat sont éligibles."},
-{"instruction": "Qui contacter en cas de problème ?", "output": "Vous pouvez écrire au support via le formulaire de contact."},
-{"instruction": "Combien de temps prend l’analyse des documents ?", "output": "En moyenne 24 à 48 heures ouvrées."}, 
-{"instruction": "À qui est destiné le crédit ?", "output": "Le crédit est exclusivement réservé aux salariés en contrat actif chez Talan."},
-{"instruction": "Puis-je demander un crédit si je suis en période d’essai ?", "output": "Non, les demandes de crédit sont acceptées uniquement après validation de la période d’essai."},
-{"instruction": "Quels sont les types de crédit disponibles ?", "output": "Crédit immobilier (1–10 ans, 5%), crédit auto (1–5 ans, 3%), crédit personnel (1–3 ans, 1%)."},
-{"instruction": "Quelle est la différence entre les trois types de crédits ?", "output": "Le crédit immobilier concerne les biens immobiliers, l'auto pour l’achat d’un véhicule, et le personnel pour des besoins individuels (santé, voyage, etc.)."},
-{"instruction": "Le crédit personnel peut-il être utilisé pour acheter une voiture ?", "output": "Non, l’achat de véhicule nécessite un crédit auto spécifique."},
-{"instruction": "Puis-je faire une simulation de crédit ?", "output": "Oui, une simulation est disponible sur l’espace employé via le portail Talan."},
-{"instruction": "Quel est le taux d’intérêt du crédit immobilier ?", "output": "5% sur une durée de 1 à 10 ans."},
-{"instruction": "Quel est le taux d’un crédit auto ?", "output": "3% sur une durée de 1 à 5 ans."},
-{"instruction": "Quel est le taux d’un crédit personnel ?", "output": "1% sur une durée de 1 à 3 ans."},
-{"instruction": "Quels documents dois-je fournir ?", "output": "Carte d’identité (CIN), trois derniers relevés bancaires, facture ou attestation liée au crédit, fiche de paie récente."},
-{"instruction": "Quels sont les justificatifs pour un prêt immobilier ?", "output": "Une promesse de vente, contrat préliminaire ou devis de construction est requis en plus des pièces standards."},
-{"instruction": "Que faut-il pour un crédit auto ?", "output": "Facture pro forma ou devis du véhicule à financer, en plus des autres pièces."},
-{"instruction": "Quels justificatifs pour un prêt personnel ?", "output": "Une attestation de besoin (frais médicaux, études, voyage) est recommandée."},
-{"instruction": "Puis-je obtenir plusieurs crédits à la fois ?", "output": "Non, un seul crédit peut être actif par employé à la fois."},
-{"instruction": "Est-ce que les intérimaires ou freelances peuvent en bénéficier ?", "output": "Non, seuls les salariés en CDI chez Talan sont éligibles."},
-{"instruction": "Que se passe-t-il en cas de départ de l’entreprise ?", "output": "Le crédit devient immédiatement exigible ou doit être renégocié avec les ressources humaines."},
-{"instruction": "Combien de temps prend le traitement d’une demande ?", "output": "En moyenne 5 jours ouvrés après la réception complète du dossier."},
-{"instruction": "Puis-je transmettre mes documents par email ?", "output": "Oui, les documents peuvent être scannés et envoyés via l’interface RH ou par mail sécurisé."},
-{"instruction": "Qui valide ma demande de crédit ?", "output": "Le service RH et la direction financière valident conjointement chaque dossier."},
-{"instruction": "Puis-je rembourser plus tôt que prévu ?", "output": "Oui, un remboursement anticipé est possible sans pénalité."},
-{"instruction": "Puis-je demander un crédit pendant mon congé ?", "output": "Oui, tant que vous êtes toujours salarié actif chez Talan."},
-{"instruction": "Comment suis-je informé de l’avancement de ma demande ?", "output": "Vous recevrez un email ou une notification sur l’espace employé à chaque étape du traitement."},
-{"instruction": "Puis-je être refusé ?", "output": "Oui, si les critères d’éligibilité ou de solvabilité ne sont pas remplis."},
-{"instruction": "Quelles sont les causes fréquentes de refus ?", "output": "Absence de documents, situation bancaire non saine, ancienneté insuffisante, projet non cohérent avec le type de crédit."},
-{"instruction": "Est-ce que je peux faire un crédit pour un membre de ma famille ?", "output": "Non, le crédit doit être directement lié à vos propres besoins."},
-{"instruction": "Est-ce que le taux est négociable ?", "output": "Non, les taux sont fixes et définis par la politique interne de Talan."},
-{"instruction": "Existe-t-il une assurance obligatoire ?", "output": "Non, mais une assurance emprunteur est fortement recommandée, notamment pour les prêts immobiliers."},
-{"instruction": "Que faire si je perds ma fiche de paie ?", "output": "Vous pouvez demander une copie au service RH."},
-{"instruction": "Quelle est la mensualité pour un crédit auto de 20 000 TND sur 5 ans ?", "output": "Avec un taux de 3%, cela équivaut à environ 359 TND/mois (simulation à confirmer)."},
-{"instruction": "Quel est l’âge minimum pour bénéficier du crédit ?", "output": "Vous devez avoir au moins 18 ans et être en contrat actif chez Talan."},
-{"instruction": "Puis-je choisir ma date de prélèvement ?", "output": "Oui, lors de la signature du contrat, vous pouvez choisir la date mensuelle."},
-{"instruction": "Le crédit est-il renouvelable ?", "output": "Non, un nouveau crédit ne peut être demandé qu’après remboursement total de l’ancien."},
-{"instruction": "Est-ce que je peux annuler ma demande ?", "output": "Oui, tant que le contrat n’a pas été signé, la demande peut être annulée sans frais."},
-{"instruction": "Les crédits sont-ils soumis à l’approbation d’une banque ?", "output": "Non, le crédit est géré exclusivement en interne par Talan."},
-{"instruction": "Comment le crédit est-il versé ?", "output": "Les fonds sont versés sur le compte bancaire indiqué après validation finale du dossier."},
-{"instruction": "Est-ce que le taux change avec l’ancienneté ?", "output": "Non, les taux sont fixes et indépendants de l’ancienneté."},
-{"instruction": "Qui puis-je contacter pour avoir plus d’informations ?", "output": "Le service RH ou votre référent financier est à votre disposition pour toute question."},
-{"instruction": "Je n’ai pas de facture, puis-je quand même faire une demande ?", "output": "Une attestation de besoin ou un devis est obligatoire pour justifier le crédit."},
-{"instruction": "Quelles informations dois-je fournir dans la demande ?", "output": "Montant demandé, durée souhaitée, type de crédit, coordonnées bancaires, pièce justificative du projet."},
-{"instruction": "Le crédit figure-t-il sur mon bulletin de salaire ?", "output": "Oui, la mensualité est prélevée directement et visible sur votre fiche de paie."},
-{"instruction": "Quel est le plafond maximum pour chaque crédit ?", "output": "Le plafond dépend de votre revenu mensuel net et du type de crédit. Simulation recommandée."},
-{"instruction": "Puis-je demander un crédit sans relevé bancaire ?", "output": "Non, les trois derniers relevés bancaires sont obligatoires."}
+    
+  {
+    "instruction":"Quels sont les crédits offerts ?",
+    "output":"Taloan propose trois types de crédits : immobilier (3 à 10 ans, 5%), auto (2 à 5 ans, 3%) et personnel (1 à 3 ans, 1%)."
+  },
+  {
+    "instruction":"Quels crédits sont disponibles chez Taloan ?",
+    "output":"Les employés peuvent choisir entre crédit immobilier, crédit auto ou crédit personnel avec des taux et durées spécifiques."
+  },
+  {
+    "instruction":"Puis-je prendre un crédit immobilier chez Taloan ?",
+    "output":"Oui, le crédit immobilier est disponible pour une durée de 3 à 10 ans avec un taux de 5%."
+  },
+  {
+    "instruction":"Quelle est la durée d’un crédit personnel ?",
+    "output":"Un crédit personnel dure entre 1 et 3 ans, avec un taux de 1%."
+  },
+  {
+    "instruction":"Quel est le taux d’intérêt du crédit auto ?",
+    "output":"Le crédit auto est proposé avec un taux fixe de 3%."
+  },
+  {
+    "instruction":"Comment vais-je recevoir les notifications ?",
+    "output":"Toutes les notifications importantes sont envoyées par e-mail."
+  },
+  {
+    "instruction":"Est-ce que je reçois un e-mail pour chaque étape ?",
+    "output":"Oui, un e-mail est envoyé à chaque étape importante de votre demande."
+  },
+  {
+    "instruction":"Les notifications arrivent-elles par SMS ?",
+    "output":"Non, actuellement seules les notifications par e-mail sont supportées."
+  },
+  {
+    "instruction":"Quels documents dois-je fournir ?",
+    "output":"Une pièce d'identité, une fiche de paie récente et un RIB."
+  },
+  {
+    "instruction":"Quel format pour les documents ?",
+    "output":"Les documents doivent être en format PDF ou JPEG."
+  },
+  {
+    "instruction":"Comment envoyer mes documents ?",
+    "output":"Utilisez l’espace client pour téléverser vos fichiers après avoir rempli le formulaire."
+  },
+  {
+    "instruction":"Quelle est l’étape initiale dans la demande de crédit ?",
+    "output":"La première étape consiste à remplir le formulaire de demande."
+  },
+  {
+    "instruction":"Quelle est l’étape d’analyse des documents dans la demande de crédit ?",
+    "output":"Les documents sont analysés pour vérifier leur conformité."
+  },
+  {
+    "instruction":"Quelle est l’étape de négociation dans la demande de crédit ?",
+    "output":"Une négociation a lieu si le montant dépasse le seuil autorisé."
+  },
+  {
+    "instruction":"Quelle est l’étape de génération du devis dans la demande de crédit ?",
+    "output":"Un devis final est généré pour récapituler les conditions."
+  },
+  {
+    "instruction":"Quelle est l’étape de signature dans la demande de crédit ?",
+    "output":"Le contrat est ensuite signé par les deux parties."
+  },
+  {
+    "instruction":"Quelle est l’étape finale dans la demande de crédit ?",
+    "output":"Une fois signé, le montant est transféré."
+  },
+  {
+    "instruction":"Quelle est l’étape de remboursement dans la demande de crédit ?",
+    "output":"Le remboursement se fait ensuite selon l’échéancier établi."
+  },
+  {
+    "instruction":"Comment puis-je faire une simulation de crédit ?",
+    "output":"Accédez à la page de simulation, remplissez les champs requis et soumettez."
+  },
+  {
+    "instruction":"Où dois-je faire une simulation de crédit ?",
+    "output":"La simulation se fait avant l’ouverture d’un espace client."
+  },
+  {
+    "instruction":"Quelles étapes suivre pour faire une simulation de crédit ?",
+    "output":"La simulation se fait avant l’ouverture d’un espace client."
+  },
+  {
+    "instruction":"Comment faire une réclamation ?",
+    "output":"Vous pouvez soumettre une réclamation via la page ‘Réclamations’."
+  },
+  {
+    "instruction":"Puis-je faire une réclamation ?",
+    "output":"Toute réclamation est traitée sous 48 heures."
+  },
+  {
+    "instruction":"Où dois-je faire une réclamation ?",
+    "output":"Allez dans la section Réclamation de l’espace client et remplissez le formulaire."
+  },
+  {
+    "instruction":"À qui m’adresser pour faire une réclamation ?",
+    "output":"Allez dans la section Réclamation de l’espace client et remplissez le formulaire."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 1)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 2)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 3)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 4)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 5)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 6)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 7)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 8)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 9)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 10)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 11)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 12)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 13)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 14)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 15)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 16)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 17)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 18)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 19)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 20)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 21)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 22)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 23)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 24)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 25)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 26)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 27)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 28)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 29)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 30)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 31)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 32)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 33)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 34)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 35)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 36)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 37)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 38)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 39)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 40)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 41)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 42)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 43)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 44)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 45)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 46)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 47)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 48)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 49)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 50)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 51)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 52)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 53)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 54)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 55)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 56)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 57)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 58)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 59)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 60)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 61)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 62)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 63)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 64)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 65)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 66)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 67)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 68)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 69)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 70)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 71)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 72)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 73)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 74)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 75)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 76)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 77)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 78)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 79)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 80)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 81)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 82)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 83)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 84)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 85)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 86)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 87)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 88)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 89)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 90)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 91)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 92)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 93)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 94)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 95)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 96)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 97)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 98)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 99)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 100)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 101)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 102)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 103)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 104)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 105)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 106)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 107)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 108)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 109)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 110)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 111)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 112)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 113)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 114)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 115)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 116)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 117)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 118)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 119)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 120)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 121)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 122)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 123)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 124)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 125)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 126)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 127)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 128)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 129)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 130)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 131)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 132)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 133)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 134)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 135)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 136)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 137)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 138)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 139)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 140)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 141)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 142)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 143)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 144)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 145)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 146)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 147)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 148)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 149)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 150)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 151)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 152)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 153)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 154)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 155)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 156)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 157)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 158)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 159)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 160)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 161)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 162)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 163)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 164)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 165)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  },
+  {
+    "instruction":"Puis-je avoir plusieurs crédits à la fois ? (version 166)",
+    "output":"Oui, sous certaines conditions et en fonction de votre capacité d’endettement."
+  },
+  {
+    "instruction":"Comment connaître le montant maximum auquel j’ai droit ? (version 167)",
+    "output":"Le montant maximal dépend de votre ancienneté et de votre salaire."
+  },
+  {
+    "instruction":"Puis-je rembourser mon crédit par anticipation ? (version 168)",
+    "output":"Oui, un remboursement anticipé est autorisé sans frais."
+  },
+  {
+    "instruction":"À quelle fréquence sont envoyés les relevés ? (version 169)",
+    "output":"Les relevés sont envoyés chaque mois par e-mail."
+  },
+  {
+    "instruction":"Le taux d’intérêt peut-il changer ? (version 170)",
+    "output":"Non, les taux sont fixes pour chaque type de crédit."
+  },
+  {
+    "instruction":"Puis-je modifier ma demande après soumission ? (version 171)",
+    "output":"Oui, vous pouvez la modifier avant l’étape de négociation."
+  },
+  {
+    "instruction":"Combien de temps faut-il pour obtenir une réponse ? (version 172)",
+    "output":"En moyenne, une réponse est donnée sous 3 à 5 jours ouvrés."
+  },
+  {
+    "instruction":"Qui peut demander un crédit chez Taloan ? (version 173)",
+    "output":"Tous les employés de Talan peuvent faire une demande de crédit."
+  },
+  {
+    "instruction":"Comment activer mon compte client ? (version 174)",
+    "output":"Remplissez le formulaire depuis la page d’accueil et attendez notre appel."
+  },
+  {
+    "instruction":"Mon compte est inactif, que faire ? (version 175)",
+    "output":"Contactez l’assistance via votre espace client pour réactivation."
+  }
 
 
 ]
